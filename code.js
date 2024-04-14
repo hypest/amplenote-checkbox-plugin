@@ -19,7 +19,7 @@
 
   startsWith: async function(app, mark) {
     // check if the footnote corresponds a checkbox.
-    const floatingPattern = new RegExp(`^\\[${mark}.*\\]`);
+    const floatingPattern = new RegExp(`^#*? *?\\[${mark}.*\\]`);
     const inTablePattern = new RegExp(`^\\| \\|\n\\|-\\|\n\\|\\[${mark}.*\\]`);
     return floatingPattern.test(app.context.selectionContent)
       || inTablePattern.test(app.context.selectionContent); // also check if inside a table
@@ -41,6 +41,7 @@
   linkOption: {
     "tick": {
       check: async function(app, link) {
+        debugger;
         return await this.isChecked(app, false);
       },
   
