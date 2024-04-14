@@ -21,8 +21,6 @@
     // check if the footnote corresponds a checkbox.
     const floatingPattern = new RegExp(`^\\[${mark}.*\\]`);
     const inTablePattern = new RegExp(`^\\| \\|\n\\|-\\|\n\\|\\[${mark}.*\\]`);
-    const isFloating = floatingPattern.test(app.context.selectionContent);
-    const isInTable = inTablePattern.test(app.context.selectionContent);
     return floatingPattern.test(app.context.selectionContent)
       || inTablePattern.test(app.context.selectionContent); // also check if inside a table
   },
@@ -66,4 +64,3 @@
     }
   }
 }
-
